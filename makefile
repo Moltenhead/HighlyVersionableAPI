@@ -51,3 +51,6 @@ backend-restart: ## Restart the Client service
 	@docker-compose restart backend
 backend-logs: ## Read Client service logs
 	@docker-compose logs -f backend
+
+list-gems: ## List all gems local to docker
+	@docker-compose exec backend gem query --local

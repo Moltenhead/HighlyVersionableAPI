@@ -23,8 +23,7 @@ services:
             - 3000:3000
         volumes:
             - .:/app
-            - gem_cache:/usr/local/bundle/gems
-            - node_cache:/app/node_modules
+            - gem_cache:/usr/local/bundle/cache
         command: 
             - /bin/bash
             - -c
