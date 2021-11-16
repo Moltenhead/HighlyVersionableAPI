@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+    database:
+        image: postgres
+        user: postgres
+        volumes:
+            - database:/var/lib/postgresql/data
+            - ./docker/dev/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+        ports:
+            - 5433:5432
+        environment:
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: TrustInAPI_development
+    backend:
+        build:
+            context: .
+        environment:
+            RAILS_ENV: development
+        depends_on:
+            - database
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/app
+            - gem_cache:/usr/local/bundle/gems
+            - node_cache:/app/node_modules
+        command: 
+            - /bin/bash
+            - -c
+            - |
+                rake db:setup
+volumes:
+    database:
+    gem_cache:
+    node_cache:
