@@ -65,7 +65,7 @@ _|_|_|_|_|_|_
 Main::ApplicationController| | | | | |
 Composition through concerns|=>|Api::ApplicationController| | | |
 | | |Compositon through concerns|=>|Api::V<n>::ApplicationController| | |
-| | | |Composition through concern|=>|Model specific controller
+| | | | |Composition through concern|=>|Model specific controller
 
 
 
