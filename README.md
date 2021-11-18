@@ -54,9 +54,9 @@ blank spaces within the record `name` will be removed if passing it through the 
 
 ## Ideology
 
-I've made the code structure as RESTful as possible, exporting all the logci within the controller, for API high versionability.
-Validations are stored within concerns to give the ability to reuse them in further versions.
-Each CRUD action is segregated within its own concern to enforce action limitation on each controller.
+I've made the code structure as RESTful as possible, exporting all the logic within the controller having API high versionability in mind.
+Validations are stored within concerns to give the ability to reuse them in further versions - ex: `controllers/api/v1/concerns/iban_validation.rb`.
+Each CRUD action is segregated within its own concern to enforce action limitation on each controller - cf `controllers/api/concerns`.
 
 Controllers composition structure :
 
