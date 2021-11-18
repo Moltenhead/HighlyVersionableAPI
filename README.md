@@ -60,13 +60,12 @@ Each CRUD action is segregated within its own concern to enforce action limitati
 
 Controllers composition structure :
 
- | | | | | 
--|-|-|-|-|-
-Main::ApplicationController|||||
-Composition through concerns||Api::ApplicationController|||
-=>|Api::ApplicationController||||
-|Composiiton through concerns|=>|Api::V<n>::ApplicationController||
-|||Composition through concern|=>|Model specific controller
+_|_|_|_|_|_|_
+-|-|-|-|-|-|-
+Main::ApplicationController| | | | | |
+Composition through concerns|=>|Api::ApplicationController| | | |
+| |Compoisiton through concerns|=>|Api::V<n>::ApplicationController| |
+| | | |Composition through concern|=>|Model specific controller
 
 
 
