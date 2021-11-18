@@ -38,4 +38,6 @@ RUN bundle check || bundle install
 
 COPY . ./
 
+EXPOSE 3000
+
 ENTRYPOINT ["./docker/entrypoints/docker-entrypoint.sh"]
